@@ -4,6 +4,7 @@ var i;
 
 
 function preload(){
+ //carregando a imagem do fundo ...
  pathImg = loadImage("path.png");
  boyImg = loadAnimation("Runner-1.png","Runner-2.png");
 }
@@ -11,7 +12,7 @@ function preload(){
 function setup(){
   createCanvas(400,400);
 
- // Movendo o fundo 
+ // Crie a sprite de fundo
 
 
 
@@ -20,12 +21,12 @@ function setup(){
  boy.addAnimation("correndo",boyImg);
  boy.scale =0.07;
 
- // Criando Boundary (Limite) esquerdo  
+ // esse código cria a barreira ESQUERDA 
  leftBoundary=createSprite(0,0,100,800);
  leftBoundary.visible = false;
 
+ //crie a barreira direita
 
- //Crie Boundary direito 
 
 }
 
@@ -34,14 +35,16 @@ function draw() {
  background(0);
 
 
- // Menino se movendo no eixo X com o mouse
+ // programe para o menino se mover no eixo X com o mouse
 
  edges= createEdgeSprites();
- boy.collide(edges[3]);
+ //esse código faz o garoto colidir com a borda esquerda
+ boy.collide(leftBoundary);
+ //programe para ele colidir com a borda direita
 
 
 
-  //Reiniciar o fundo
+  //programe para reiniciar o fundo na vertical
 
 
 
